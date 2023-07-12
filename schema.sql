@@ -7,6 +7,7 @@ CREATE TABLE animals(
    ESCAPE_ATTEMPTS int,
    NEUTERED boolean,
    WEIGHT_KG decimal,
-   SPECIES varchar(100),
    PRIMARY KEY(ID)
 );
+
+ALTER TABLE animals ADD species varchar(250);
