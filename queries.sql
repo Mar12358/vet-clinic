@@ -26,3 +26,19 @@ WHERE NAME != 'Gabumon';
 SELECT * FROM animals 
 WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
 
+BEGIN TRANSACTION;
+UPDATE animals SET species = 'digimon' WHERE NAME LIKE '%mon';
+UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
+COMMIT;
+
+BEGIN TRANSACTION;
+DELETE FROM animals;
+ROLLBACK;
+
+BEGIN TRANSACTION;
+DELETE FROM animals WHERE DATE_OF_BIRTH > '2022-01-01';
+SAVEPOINT SP1;
+UPDATE animals SET weight_kg = weight_kg * -1;
+ROLLBACK TO SP1;
+UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+COMMIT;
