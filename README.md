@@ -102,6 +102,7 @@ After you're finished please remove all the comments and instructions!
 
 - **DB and Table Creation**
 - **Select elements in the table**
+- **Transactions and analytical queries**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -213,7 +214,6 @@ Example:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **Query and update animals table**
 - [ ] **Query multiple tables**
 - [ ] **Add 'join table' for visits**
 
