@@ -24,3 +24,22 @@ CREATE TABLE species(
    name varchar(100),
    PRIMARY KEY(ID)
 );
+
+BEGIN;
+ALTER TABLE animals
+DROP COLUMN species,
+
+ALTER TABLE animals
+ADD COLUMN SPECIES_ID INT,
+ADD COLUMN OWNERS_ID INT;
+
+ALTER TABLE animals
+ADD CONSTRAINT fk_animals_species
+FOREIGN KEY (SPECIES_ID)
+REFERENCES species(ID),
+ADD CONSTRAINT fk_animals_owners
+FOREIGN KEY (owners_ID)
+REFERENCES owners(ID);
+
+COMMIT;
+SELECT * FROM ANIMALS;
