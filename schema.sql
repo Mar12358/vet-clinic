@@ -43,3 +43,11 @@ REFERENCES owners(ID);
 
 COMMIT;
 SELECT * FROM ANIMALS;
+
+CREATE TABLE vets(
+	id int GENERATED ALWAYS AS IDENTITY,
+	name varchar(100),
+	age int,
+	date_of_graduation date,
+	PRIMARY KEY(ID)
+);
