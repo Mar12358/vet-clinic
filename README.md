@@ -72,8 +72,8 @@
 
 
 - **DB and Table Creation**
-- **Select elements in the table**
-- **Transactions and analytical queries**
+- **Queries History**
+- **Transactions and Insertions**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -185,8 +185,8 @@ Example:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **Query multiple tables**
-- [ ] **Add 'join table' for visits**
+- [ ] **Database Performance Audit**
+- [ ] **Database Schema Diagram**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
