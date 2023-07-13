@@ -86,5 +86,9 @@ SELECT a.name FROM animals a
 JOIN owners o ON a.owners_id = o.id
 WHERE a.escape_attempts = 0 AND o.full_name = 'Dean Winchester'
 
-
+SELECT o.full_name as owner, COUNT(*) AS total_animals FROM animals a
+JOIN owners o ON a.owners_id = o.id
+GROUP BY o.full_name
+ORDER BY total_animals DESC
+LIMIT 1;
 
