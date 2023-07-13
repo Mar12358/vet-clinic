@@ -34,3 +34,38 @@ VALUES ('Blossom', '1998-09-13', 3, true, 17 );
 
 INSERT INTO animals (NAME, DATE_OF_BIRTH, ESCAPE_ATTEMPTS, NEUTERED, WEIGHT_KG)
 VALUES ('Ditto', '2022-05-14', 4, true, 22 );
+
+
+
+INSERT INTO owners (full_name, age)
+VALUES ('Sam Smith', 34);
+INSERT INTO owners (full_name, age)
+VALUES ('Jennifer Orwell', 19);
+INSERT INTO owners (full_name, age)
+VALUES ('Bob', 45);
+INSERT INTO owners (full_name, age)
+VALUES ('Melody Pond', 77);
+INSERT INTO owners (full_name, age)
+VALUES ('Dean Winchester', 14);
+INSERT INTO owners (full_name, age)
+VALUES ('Jodie Whittaker', 38);
+
+INSERT INTO species (name)
+VALUES ('Pokemon');
+INSERT INTO species (name)
+VALUES ('Digimon');
+
+
+UPDATE animals SET species_id = 2 where name like '%mon';
+UPDATE animals SET species_id = 1 where name not like '%mon';
+
+UPDATE animals SET owners_id = owners.id FROM owners
+WHERE owners.full_name = 'Sam Smith' AND name = 'Agumon';
+UPDATE animals SET owners_id = owners.id FROM owners
+WHERE owners.full_name = 'Jennifer Orwell' AND (name = 'Gabumon' OR name = 'Pikachu');
+UPDATE animals SET owners_id = owners.id FROM owners
+WHERE owners.full_name = 'Bob' AND (name = 'Devimon' OR name = 'Plantmon');
+UPDATE animals SET owners_id = owners.id FROM owners
+WHERE owners.full_name = 'Melody Pond' AND (name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom');
+UPDATE animals SET owners_id = owners.id FROM owners
+WHERE owners.full_name = 'Dean Winchester' AND (name = 'Angemon' OR name = 'Boarmon');
